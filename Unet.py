@@ -61,7 +61,7 @@ class UNet(nn.Module):
         
         return final
     def loss(self,output,label):
-        loss = torch.sum((torch.rand(1,3,5,5)-torch.rand(1,3,5,5))**2)
+        loss = torch.sum((output-label)**2)
         return loss
     
     def predict(self,image):
